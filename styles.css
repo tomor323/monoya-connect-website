@@ -78,18 +78,29 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 16px;
+}
+
+.header-container .logo {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.header-container .nav,
+.header-container .btn-header {
+    flex-shrink: 0;
 }
 
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    font-size: 20px;
+    gap: 8px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--urushi);
     white-space: nowrap;
     transition: color 0.2s ease;
+    text-decoration: none;
 }
 
 .logo:hover {
@@ -97,13 +108,18 @@ a {
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     display: block;
+    flex-shrink: 0;
 }
 
 .logo-text {
     line-height: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav {
@@ -697,11 +713,33 @@ a {
     background: var(--cotton);
 }
 
+.flow-section .container {
+    text-align: center;
+}
+
+.flow-section .section-tag {
+    text-align: center;
+    width: auto;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.flow-section .section-title {
+    text-align: center;
+}
+
+.flow-section .section-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .flow-steps {
     display: flex;
     flex-direction: column;
     gap: 24px;
     margin-top: 48px;
+    text-align: left;
 }
 
 .flow-step {
@@ -709,28 +747,36 @@ a {
     border-radius: var(--radius);
     padding: 32px 24px;
     box-shadow: var(--shadow-sm);
-    text-align: center;
+    text-align: left;
 }
 
 .step-number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
     background: var(--rust);
     color: var(--white);
-    border-radius: 50%;
-    font-size: 24px;
+    border-radius: 12px;
+    font-size: 28px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .step-title {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     color: var(--urushi);
-    line-height: 1.5;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.step-description {
+    font-size: 15px;
+    color: var(--clay);
+    line-height: 1.7;
 }
 
 .flow-arrow {
@@ -854,7 +900,36 @@ a {
     padding: 12px var(--spacing-mobile);
     box-shadow: 0 -4px 16px rgba(13, 14, 17, 0.1);
     z-index: 999;
-    display: block;
+    display: none;
+}
+
+body {
+    padding-bottom: 0;
+}
+
+/* Add bottom padding on mobile to account for sticky CTA */
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 76px;
+    }
+    
+    .mobile-sticky-cta {
+        display: block;
+    }
+    
+    .header-container {
+        gap: 12px;
+        padding: 0 16px;
+    }
+    
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 /* ===========================
@@ -961,6 +1036,16 @@ a {
     
     .btn-header {
         display: inline-block;
+    }
+    
+    .logo {
+        gap: 12px;
+        font-size: 20px;
+    }
+    
+    .logo-icon {
+        width: 40px;
+        height: 40px;
     }
 }
 
