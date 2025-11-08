@@ -31,8 +31,7 @@ if (contactForm) {
             company: document.getElementById('company').value,
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            products: document.getElementById('products').value,
-            lot: document.getElementById('lot').value
+            products: document.getElementById('products').value
         };
         
         // Here you would typically send the data to your backend
