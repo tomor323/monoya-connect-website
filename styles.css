@@ -391,6 +391,17 @@ a {
     max-width: 100%;
 }
 
+.demo-video-player {
+    display: block;
+    width: 100%;
+    height: auto; /* follow intrinsic video height */
+    max-width: 960px; /* desktop cap */
+    margin: 0 auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    background: #000;
+}
+
 .video-placeholder {
     background: var(--cotton);
     border-radius: var(--radius);
